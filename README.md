@@ -23,7 +23,7 @@ getText(urlPath).then(response => {
 
 ```
 ##### HTML
-###### jsDelivr 
+###### [jsDelivr](https://cdn.jsdelivr.net/gh/GabrielDuarteMG/DontpadJs/)   
 ```html
    <script src="https://cdn.jsdelivr.net/gh/GabrielDuarteMG/DontpadJs@latest/DontpadJS.min.js">
    </script>
