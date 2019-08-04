@@ -22,3 +22,22 @@ getText(urlPath).then(response => {
 });
 
 ```
+##### HTML
+###### jsDelivr 
+```html
+   <script src="https://cdn.jsdelivr.net/gh/GabrielDuarteMG/DontpadJs@latest/DontpadJS.min.js">
+   </script>
+```
+###### Local Import
+```html
+   <script src="DontpadJS.min.js">
+   </script>
+```
+
+### Contact
+
+###### Email
+`gabriel160499@gmail.com`
+###### [Facebook](https://www.facebook.com/Gabriields18) 
+###### [Issues](https://github.com/GabrielDuarteMG/DontpadJs/issues) 
+
