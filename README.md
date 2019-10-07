@@ -7,6 +7,7 @@ Dontpad unofficial API for Js Vanilla
 - Free proxy to get Dontpad Data by [cors-anywhere]( https://cors-anywhere.herokuapp.com/)
 ### Using
 - After import DontpadJS.min.js 
+
 ##### Post
 
 ```javascript
@@ -22,6 +23,27 @@ getText(urlPath).then(response => {
 });
 
 ```
+#### Safe Data
+###### Post
+```javascript
+  postText(urlPath, textPost, true, passwordSignature)
+
+```
+*If you dont insert Pass this default password will: dontpadJs *
+###### Get only text
+```javascript
+getText(urlPath,true).then(response => {
+        console.log(response)
+});
+
+```
+###### Get  text and verify signature
+```javascript
+getText(urlPath,true,true,passwordSignature).then(response => {
+        console.log(response)
+ });
+
+```
 ##### HTML
 ###### [jsDelivr](https://cdn.jsdelivr.net/gh/GabrielDuarteMG/DontpadJs/)   
 ```html
@@ -34,6 +56,12 @@ getText(urlPath).then(response => {
    </script>
 ```
 
+###### For use Encrypt
+
+```html
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/hmac-sha256.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/components/enc-base64-min.js"></script>
+```
 ### Contact
 
 ###### Email
