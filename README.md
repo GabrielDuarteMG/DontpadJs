@@ -49,6 +49,8 @@ getText(urlPath,true,true,passwordSignature).then(response => {
  });
 
 ```
+> Output 
+![](https://i.snipboard.io/bdK0Vr.jpg)
 ##### HTML
 ###### [jsDelivr](https://cdn.jsdelivr.net/gh/GabrielDuarteMG/DontpadJs/)   
 ```html
