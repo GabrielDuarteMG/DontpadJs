@@ -24,11 +24,16 @@ getText(urlPath).then(response => {
 
 ```
 #### Safe Data
+
 ###### Post
 ```javascript
   postText(urlPath, textPost, true, passwordSignature)
 
 ```
+> If someone access your path will see like this.
+
+![](https://i.snipboard.io/3OiMFH.jpg)
+
 *If you dont insert Pass this default password will: dontpadJs *
 ###### Get only text
 ```javascript
