@@ -78,3 +78,7 @@ getText(urlPath,true,true,passwordSignature).then(response => {
 ###### [Facebook](https://www.facebook.com/Gabriields18) 
 ###### [Issues](https://github.com/GabrielDuarteMG/DontpadJs/issues) 
 
+
+### Implement Max Security.
+
+- If you wanna using some mathod to encrypt and implement your post on max security, i'm recommend [Obfuscator.io](https://obfuscator.io/).
