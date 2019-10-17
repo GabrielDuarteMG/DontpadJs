@@ -3,8 +3,9 @@ Dontpad unofficial API for Js Vanilla
 
 ![](https://img.shields.io/github/stars/GabrielDuarteMG/DontpadJs.svg) ![](https://img.shields.io/github/forks/GabrielDuarteMG/DontpadJs.svg) ![](https://img.shields.io/github/issues/GabrielDuarteMG/DontpadJs.svg) 
 ### Features
-- Using Dontpad in Javascript without backend server to request
-- Free proxy to get Dontpad Data by [cors-anywhere]( https://cors-anywhere.herokuapp.com/)
+- Using Dontpad in Javascript without backend server to request.
+- Free proxy to get Dontpad Data by [cors-anywhere]( https://cors-anywhere.herokuapp.com/).
+- Using [crypto-js](https://github.com/brix/crypto-js) to simple encrypt and assign post data.
 ### Using
 - After import DontpadJS.min.js 
 
