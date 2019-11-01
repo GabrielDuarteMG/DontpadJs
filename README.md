@@ -24,7 +24,7 @@ getText(urlPath).then(response => {
 });
 
 ```
-#### Safe Data
+#### Safe Data (AES + JWT)
 
 ###### Post
 ```javascript
@@ -43,7 +43,7 @@ getText(urlPath,true).then(response => {
 });
 
 ```
-###### Get  text and verify signature
+###### Get text and verify signature
 ```javascript
 getText(urlPath,true,true,passwordSignature).then(response => {
         console.log(response)
@@ -70,6 +70,7 @@ getText(urlPath,true,true,passwordSignature).then(response => {
 ```html
 <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/hmac-sha256.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/components/enc-base64-min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"></script>
 ```
 ### Contact
 
