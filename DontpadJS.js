@@ -4,7 +4,7 @@ var postText = async (key, text, encrypt = false, keyEncrypt = 'dontpadJs') => {
     let url;
     if (encrypt == true) {
         text = encryptString({
-            "data": text
+            "data": EncryptAES(text,keyEncrypt)
         }, keyEncrypt)
     }
     if (urlRequest == 'https:')
@@ -46,14 +46,14 @@ var getText = (key, encrypt = false, validate = false, keyValidate = 'dontpadJs'
                         signature = true;
                     else
                         signature = false;
-                    let dataReturn = (encrypt == true ? decryptString(responseData).data : responseData );
+                    let dataReturn = (encrypt == true ? DecryptAES(decryptString(responseData).data,keyValidate) : responseData);
                     return {
                         "Signature": signature,
-                        "data" : dataReturn
+                        "data": dataReturn
                     }
                 } else {
                     if (encrypt == true)
-                        return decryptString(responseData).data
+                        return DecryptAES(decryptString(responseData).data,keyValidate)
                     else
                         return responseData
                 }
@@ -69,18 +69,15 @@ var getText = (key, encrypt = false, validate = false, keyValidate = 'dontpadJs'
 //Doc load and start
 document.addEventListener("DOMContentLoaded", function (event) {
     try {
-        var loadLib = encryptString({
-            "Load": "Load"
-        }, 'Load');
+       encryptString({"Load": "Load"}, 'Load');
     } catch (e) {
-        if (e instanceof ReferenceError) {
-            setTimeout(console.log.bind(console, "%cwarn%c Error to load Encryptation Lib, Follow Link to use references > https://pastebin.com/WhVWXGjF", "background: #e3ce10;color:#FFF;padding:5px;border-radius: 3px;line-height: 5px;user-select: none;", ""));
-        }
+        if (e instanceof ReferenceError) 
+            setTimeout(console.log.bind(console, "%cwarn%c Error to load Encryptation Lib, Follow Link to use references > https://pastebin.com/PJpYmNXw", "background: #e3ce10;color:#FFF;padding:5px;border-radius: 3px;line-height: 5px;user-select: none;", ""));
     }
     setTimeout(console.log.bind(console, "%cinfo%c DontpadJS is loaded! https://github.com/GabrielDuarteMG/DontpadJs", "background: #00b84c;color:#FFF;padding:5px;border-radius: 3px;line-height: 5px;user-select: none;", ""));
 });
 /*  
-    JWT - Encrypt method Using Alg HS256
+    JWT - Encrypt method Using Alg HS256 - Type: DPJs
     Default password: dontpadJs
 */
 var validateJwt = (token, pass) => {
@@ -93,7 +90,6 @@ var validateJwt = (token, pass) => {
     if (defaultHeader.alg != header.alg || defaultHeader.typ != header.typ)
         return false;
     else {
-
         let signature = token.split('.')[0] + "." + token.split('.')[1];
         signature = CryptoJS.HmacSHA256(signature, pass);
         signature = base64url(signature);
@@ -131,4 +127,12 @@ const base64url = (source) => {
     encodedSource = encodedSource.replace(/\+/g, '-');
     encodedSource = encodedSource.replace(/\//g, '_')
     return encodedSource;
+}
+
+var EncryptAES = (text, key) => {
+    return CryptoJS.AES.encrypt(text, key).toString();
+}
+
+var DecryptAES = (text, key) => {
+    return CryptoJS.AES.decrypt(text, key).toString(CryptoJS.enc.Utf8);
 }
