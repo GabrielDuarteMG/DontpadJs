@@ -10,3 +10,13 @@ postText('path', 'Hello World' , true, 'password')
 getText('path',true,true,'password').then(response => {
      console.log(response)
 });
+
+// SubPaths
+
+ getSubPath('jsapi').then(response => {
+        console.log(response)
+ });
+
+//clear
+
+clearPath('jsapi')
