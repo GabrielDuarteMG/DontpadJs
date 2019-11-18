@@ -26,7 +26,7 @@ var postText = async (key, text, encrypt = false, keyEncrypt = 'dontpadJs') => {
     });
     await rawResponse
 };
-// Get
+// Get 
 var getText = (key, encrypt = false, validate = false, keyValidate = 'dontpadJs') => {
     const proxy = 'https://cors-anywhere.herokuapp.com/http://dontpad.com/';
     let url = proxy + key + '.txt';
@@ -66,8 +66,22 @@ var getText = (key, encrypt = false, validate = false, keyValidate = 'dontpadJs'
         })
         .catch(error => console.error(error));
 }
+//Get SubPaths from Key
+var getSubPath = (key) =>{
+    const proxy = 'https://cors-anywhere.herokuapp.com/http://dontpad.com/';
+    let url = proxy + key + '.menu.json';
+    return fetch(url,
+        {
+            method: "GET",
+            headers: {
+                'Content-Type': 'text/html; charset=utf-8',
+            },
+        }).then((response) => response.text()).then((responseData) => JSON.parse(responseData));
+}
+//Clear Path
+var clearPath = (key) => postText(key, '')
 //Doc load and start
-document.addEventListener("DOMContentLoaded", function (event) {
+document.addEventListener("DOMContentLoaded",  (event) => {
     try {
        encryptString({"Load": "Load"}, 'Load');
     } catch (e) {
