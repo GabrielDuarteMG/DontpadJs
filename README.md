@@ -24,6 +24,19 @@ getText(urlPath).then(response => {
 });
 
 ```
+##### Get SubPaths (Menu)
+
+```javascript
+getSubPath(urlPath).then(result => {
+     console.log(result)
+});
+```
+##### Clear Path
+
+```javascript
+clearPath(urlPath) 
+```
+
 #### Safe Data (AES + JWT)
 
 ###### Post
